@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Segmentation using deeplabv3plus</title>
+	<link rel="stylesheet" type="text/css" href="./static/css/style.css">       
+    <style>
+		.title {
+			text-align: center;
+			border-radius: 10px;
+			background-color: black;
+			padding: 10px;
+		}
+	</style>
+    <style>
+		img{
+			margin-top: 20px;
+			
+			/* position:relative; */
+			
+
+		}
+		
+		.container {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			
+		}
+		.container img {
+			margin: 20px;
+		}
+		h1 {
+		background-color: rgb(230, 108, 108);
+		color: white;
+		}
+	  
+	  #f{
+		align-self: center;
+		background-color: aqua;
+		border-radius: 5%;
+
+		}
+		.image{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+		.upload{
+			margin-bottom: 100px;
+		}
+		.im{
+			position: absolute;
+			right: 750px;
+			top: 250px;
+			left: 580px;
+		}
+		.sm{
+			position: absolute;
+			top: 250px;
+			right: 550px;
+		}
+		h2{
+			/* background-color: aliceblue; */
+			color: aliceblue;
+		}
+		#f{
+			font-size: 20px;
+		}
+		
+	</style>
+</head>
+<body>
+	<style>
+		body {
+		  background-image: url('/static/images/download.jpg');
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: 100% 100%; 
+		}
+		</style>
+	<div class="main">
+	<h1 class="title">Segmentation of Urban Images </h1>
+	<div class="upload">
+	<form action="/" method="POST" enctype="multipart/form-data" accept="image/*">
+		<input type="file" name="image" ><br><br>
+		<input type="submit" value="Upload">
+	</form>
+	</div>
+    <div class="container">
+		<div class="row">
+			<div class="same">
+				<div class="image">
+					<h2 class="im">Input Image</h2>
+					<img src="data:image/jpeg;base64,{{ input_image }}" width="200" alt="upload_image"><br><br>
+				
+				<div class="image ">
+					<h2 class="sm">Segmented Mask</h2>
+					<img src="data:image/jpeg;base64,{{ mask_image }}" width="200" alt="upload_image">
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><div>
+	<img src="../static/images/labels.png">
+</div>
+<br>
+
+
+</body>
+</html>
